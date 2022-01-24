@@ -1,0 +1,33 @@
+{
+  "name": "rmrk1-talisman-nft-creation-script",
+  "version": "1.0.0",
+  "description": "rmrk1-talisman-nft-creation-script",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "fetch": "rmrk-tools-fetch",
+    "consolidate": "rmrk-tools-consolidate"
+  },
+  "dependencies": {
+    "@pinata/sdk": "^1.1.23",
+    "@polkadot/api": "^6.0.4",
+    "@polkadot/keyring": "^7.4.1",
+    "@polkadot/util-crypto": "^7.4.1",
+    "@types/node": "^16.9.6",
+    "cowsay": "^1.5.0",
+    "dotenv": "^10.0.0",
+    "nanoid": "^3.1.25",
+    "node-fetch": "^2.6.5",
+    "p-limit": "^3.1.0",
+    "prettier": "^2.3.2",
+    "rmrk-tools": "^1.0.17",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/whatwg-fetch": "^0.0.33"
+  },
+  "resolutions": {
+    "isomorphic-fetch": "2.2.1"
+  }
+}
