@@ -70,6 +70,7 @@ export const sendNFT = async () => {
     // Send tx
     const { block } = await sendAndFinalize(tx, kp);
 
+    // personal touch cause I like it
     console.log(cowsay.say({
     text: `You distributed Talisman NFTs at block ${block}`,
     r: true
