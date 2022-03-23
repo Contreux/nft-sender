@@ -10,6 +10,8 @@ import { CodecHash } from "@polkadot/types/interfaces";
 import { NFTConsolidated } from "rmrk-tools/dist/tools/consolidator/consolidator";
 import fetch from "node-fetch";
 
+const COLLECTION_ID="b6e98494bff52d3b1e-COMMENDATION";
+
 export const getKeys = (): KeyringPair[] => {
   const k = [];
   const keyring = new Keyring({ type: "sr25519" });
@@ -92,14 +94,14 @@ export const sendAndFinalize = async (
 };
 
 
-
 // Retreive NFT Data
 export const fetchNFTData = async (addresses: string[]) => {
   try {
     let data: NFTConsolidated[] = []
     for await (const address of addresses){
       console.log("address",address)
-      const payload = await fetch(`https://singular.rmrk.app/api/rmrk1/account/${address}`);
+      //const payload = await fetch(`https://singular.rmrk.app/api/rmrk1/account/${address}`);
+      const payload = await fetch(`https://singular.rmrk.app/api/rmrk1/account/${address}/${COLLECTION_ID}`);
       const nftData: JSON[] = await payload.json();
       const nftDataConsolidated: NFTConsolidated[] = (nftData as unknown) as NFTConsolidated[]
       console.log("consolidated",nftDataConsolidated)

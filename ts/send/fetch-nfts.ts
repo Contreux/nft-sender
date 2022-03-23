@@ -17,7 +17,7 @@ export const fetchNFT = async () => {
       const phrase = process.env.MNEMONIC_PHRASE; 
       const kp = getKeyringFromUri(phrase); 
 
-      //  Retreive accounts nfts
+      //  Retreive Talisman minters owned nfts
       const accountsNFTs = await fetchNFTData([encodeAddress(kp.address,2)]) // Encode address from base format
 
       let json = JSON.stringify(accountsNFTs)
